@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheetSentry — 01 Public Website (Separated HTML/CSS/Text/IX)</title>
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/surfaces.css" />
+  </head>
+  <body>
+    <header class="ss-topbar">
+      <strong>SheetSentry</strong>
+      <nav style="display:flex;gap:24px;font-size:13px;color:var(--ss-ink-muted)">
+        <span>Features</span>
+        <span>How it works</span>
+        <span>Pricing</span>
+        <span>FAQ</span>
+      </nav>
+      <div style="display:flex;gap:12px">
+        <a href="#preview" class="ss-btn ss-btn-secondary">Sign in</a>
+        <a href="#preview" class="ss-btn ss-btn-primary">Start for free</a>
+      </div>
+    </header>
+
+    <main style="background:var(--ss-white);padding:64px 32px;border-bottom:1px solid var(--ss-border)">
+      <div style="max-width:1240px;margin:0 auto" class="ss-grid-2">
+        <div>
+          <span class="ss-pill" style="background:var(--ss-brand-soft);color:var(--ss-brand-primary)" data-ss-text="public.eyebrow">
+            SPREADSHEET PRE-INGESTION VALIDATION
+          </span>
+          <h1 style="font-size:44px;line-height:1.1;margin:18px 0" data-ss-text="public.headline">
+            Validate every spreadsheet before it breaks downstream pipelines.
+          </h1>
+          <p style="font-size:15px;line-height:1.6;color:var(--ss-ink-muted)" data-ss-text="public.subhead"></p>
+          <div style="display:flex;gap:12px;margin-top:24px">
+            <button type="button" class="ss-btn ss-btn-primary" data-ss-text="public.primaryCta"></button>
+            <button type="button" class="ss-btn ss-btn-secondary" data-ss-text="public.secondaryCta"></button>
+          </div>
+        </div>
+
+        <div class="ss-hero-3d-preview">
+          <section id="preview" class="ss-card ss-hero-3d-card">
+          <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--ss-border);padding-bottom:14px">
+            <strong data-ss-text="public.previewFile"></strong>
+            <span class="ss-pill ss-pill-success">Clean Preflight</span>
+          </div>
+          <div class="ss-grid-2" style="margin-top:18px">
+            <div style="background:var(--ss-brand-soft);padding:16px;border-radius:12px">
+              <div style="font-size:11px;color:var(--ss-ink-muted)">Data Quality Score</div>
+              <div style="font-size:28px;font-weight:700;margin-top:4px" data-ss-text="public.previewScore"></div>
+            </div>
+            <div style="background:var(--ss-subtle);padding:16px;border-radius:12px;border:1px solid var(--ss-border)">
+              <div style="font-size:11px;color:var(--ss-ink-muted)">Currency Preview</div>
+              <button type="button" data-ss-ix="toggle-currency" data-currency="USD" class="ss-btn ss-btn-secondary" style="margin-top:6px;height:32px;padding:0 12px;font-size:12px">
+                Showing USD ($)
+              </button>
+            </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <script src="./text/surfaces.text.js"></script>
+    <script src="./ix/surfaces.ix.js"></script>
+  </body>
+</html>

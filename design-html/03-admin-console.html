@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheetSentry — 03 Admin Console (Separated HTML/CSS/Text/IX)</title>
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/surfaces.css" />
+  </head>
+  <body>
+    <div class="ss-shell">
+      <aside class="ss-rail ss-rail--admin">
+        <div>
+          <strong style="font-size:16px">SheetSentry Admin</strong>
+          <nav style="display:flex;flex-direction:column;gap:8px;margin-top:24px;font-size:13px">
+            <span>Overview</span>
+            <span>Users</span>
+            <span>Payments Ledger</span>
+            <span>Storage</span>
+            <span>Security &amp; Audit</span>
+            <span>Roles &amp; RBAC</span>
+          </nav>
+        </div>
+        <div style="background:var(--ss-dark-card);border:1px solid var(--ss-dark-border);border-radius:12px;padding:14px;font-size:12px">
+          Platform Owner
+        </div>
+      </aside>
+
+      <div>
+        <header class="ss-topbar">
+          <span style="font-size:13px;color:var(--ss-ink-muted)" data-ss-text="admin.breadcrumb"></span>
+          <span class="ss-pill ss-pill-success" data-ss-text="admin.badge"></span>
+        </header>
+
+        <main class="ss-main">
+          <h1 style="margin:0 0 20px;font-size:24px" data-ss-text="admin.title"></h1>
+
+          <div class="ss-grid-2">
+            <section class="ss-card" style="border-color:#b8e6cd">
+              <div style="font-size:11px;font-weight:700;color:var(--ss-ink-muted)">SETTLED USD ($) LEDGER</div>
+              <div style="font-size:26px;font-weight:700;margin-top:8px" data-ss-text="admin.usdVolume"></div>
+            </section>
+            <section class="ss-card" style="border-color:var(--ss-brand-border)">
+              <div style="font-size:11px;font-weight:700;color:var(--ss-ink-muted)">SETTLED PHP (₱) LEDGER</div>
+              <div style="font-size:26px;font-weight:700;margin-top:8px" data-ss-text="admin.phpVolume"></div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <script src="./text/surfaces.text.js"></script>
+    <script src="./ix/surfaces.ix.js"></script>
+  </body>
+</html>

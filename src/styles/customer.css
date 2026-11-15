@@ -1,0 +1,70 @@
+/**
+ * 02 Customer App Surface Stylesheet
+ * Inherits typography, light canvas (#F5F7FB), white card chrome (#FFFFFF),
+ * border hairlines (#E4E9F1), and primary blue actions (#2563EB) from
+ * 01 Public Website, cleanly isolated inside the customer shell.
+ */
+
+.ss-surface-customer {
+  isolation: isolate;
+  background-color: var(--ss-surface-canvas);
+  color: var(--ss-ink-primary);
+  font-family: var(--ss-font-sans);
+}
+
+.ss-customer-sidebar {
+  width: 258px;
+  background-color: var(--ss-surface-chrome-customer);
+  color: var(--ss-ink-on-dark);
+  border-right: 1px solid var(--ss-border-chrome);
+}
+
+.ss-customer-topbar {
+  height: 76px;
+  background-color: var(--ss-surface-white);
+  border-bottom: 1px solid var(--ss-border-default);
+}
+
+.ss-customer-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--ss-surface-white);
+  border: 1px solid var(--ss-border-default);
+  border-radius: var(--ss-radius-lg);
+  box-shadow: var(--ss-shadow-xs);
+}
+
+.ss-customer-dropzone {
+  background-color: #fbfcfe;
+  border: 2px dashed #cbd5e1;
+  border-radius: var(--ss-radius-xl);
+  transition: border-color 150ms ease, background-color 150ms ease;
+}
+
+.ss-customer-dropzone:hover,
+.ss-customer-dropzone[data-dragging='true'] {
+  border-color: var(--ss-brand-primary);
+  background-color: var(--ss-brand-soft);
+}
+
+.ss-customer-sticky-bar {
+  position: relative;
+  z-index: 10;
+  margin-top: 24px;
+  background-color: var(--ss-surface-white);
+  border: 1px solid var(--ss-border-default);
+  border-radius: var(--ss-radius-lg);
+  box-shadow: var(--ss-shadow-sm);
+}
+
+.ss-customer-mobile-nav {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 30;
+  height: 68px;
+  background-color: var(--ss-surface-white);
+  border-top: 1px solid var(--ss-border-default);
+  box-shadow: 0 -4px 16px rgba(16, 33, 59, 0.08);
+}

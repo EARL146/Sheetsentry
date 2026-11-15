@@ -1,0 +1,97 @@
+/**
+ * SheetSentry Responsive Architecture — Separated Phone, Tablet & Desktop Rules
+ *
+ * Isolates phone (< 768px), tablet (768px–1023px), and desktop (>= 1024px)
+ * shell geometry, popovers, touch targets, safe areas, and 3D stage framing
+ * cleanly away from component logic.
+ */
+
+/* ==========================================================================
+   1. PHONE SURFACE RULES (0px – 767px)
+   ========================================================================== */
+@media (max-width: 767px) {
+  .ss-public-header {
+    height: 68px;
+  }
+
+  .ss-customer-topbar,
+  .ss-admin-topbar {
+    height: 62px;
+  }
+
+  .ss-customer-mobile-nav {
+    height: calc(66px + env(safe-area-inset-bottom, 0px));
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+
+  .ss-main-phone-pad {
+    padding-bottom: calc(108px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .ss-admin-popover {
+    left: 12px;
+    right: 12px;
+    top: 66px;
+    width: auto;
+    max-width: calc(100vw - 24px);
+  }
+
+  /* Frame Hero 3D stage cleanly on narrow phones without clipping floating tiles */
+  .ss-hero-3d-viewport {
+    padding: 10px 6px 14px 6px;
+    perspective: 760px;
+  }
+
+  .ss-hero-ambient-backdrop {
+    inset: 2% 0% 4% 0%;
+    border-radius: 20px;
+  }
+
+  /* Ensure touch buttons & links remain easy to tap cleanly on phones */
+  .ss-touch-btn {
+    min-height: 44px;
+  }
+}
+
+/* ==========================================================================
+   2. TABLET SURFACE RULES (768px – 1023px)
+   ========================================================================== */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .ss-customer-topbar,
+  .ss-admin-topbar {
+    height: 68px;
+  }
+
+  .ss-main-phone-pad {
+    padding-bottom: 112px;
+  }
+
+  .ss-admin-popover {
+    right: 20px;
+    top: 70px;
+    width: min(348px, calc(100vw - 40px));
+  }
+}
+
+/* ==========================================================================
+   3. DESKTOP SURFACE RULES (>= 1024px)
+   ========================================================================== */
+@media (min-width: 1024px) {
+  .ss-customer-sidebar {
+    width: 268px;
+  }
+
+  .ss-admin-sidebar {
+    width: 248px;
+  }
+
+  .ss-main-phone-pad {
+    padding-bottom: 84px;
+  }
+
+  .ss-admin-popover {
+    right: 32px;
+    top: 68px;
+    width: 348px;
+  }
+}

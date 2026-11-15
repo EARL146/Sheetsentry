@@ -1,0 +1,33 @@
+# Optional Portable Containerized Stack for SheetSentry MySQL 8 + phpMyAdmin
+# Mapped on 3308/8084 so it does not collide with local AMPPS MySQL (3306) or phpMyAdmin (80)
+services:
+  mysql:
+    image: mysql:8.4
+    container_name: sheetsentry-mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_PASSWORD:-sheetsentry_local}
+      MYSQL_DATABASE: ${DB_NAME:-sheetsentry}
+    ports:
+      - "3308:3306"
+    volumes:
+      - sheetsentry_mysql_data:/var/lib/mysql
+      - ./database/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+      - ./database/seeds.sql:/docker-entrypoint-initdb.d/02-seeds.sql:ro
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: sheetsentry-phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      PMA_USER: root
+      PMA_PASSWORD: ${DB_PASSWORD:-sheetsentry_local}
+    ports:
+      - "8084:80"
+
+volumes:
+  sheetsentry_mysql_data:

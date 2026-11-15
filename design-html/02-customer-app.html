@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheetSentry — 02 Customer App (Separated HTML/CSS/Text/IX)</title>
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/surfaces.css" />
+  </head>
+  <body>
+    <div class="ss-shell">
+      <aside class="ss-rail ss-rail--customer">
+        <div>
+          <strong style="font-size:16px">SheetSentry</strong>
+          <nav style="display:flex;flex-direction:column;gap:8px;margin-top:24px;font-size:13px">
+            <span>Dashboard</span>
+            <span>Upload file</span>
+            <span>Validation profiles</span>
+            <span>Rule builder</span>
+            <span>Run history</span>
+            <span>Settings</span>
+          </nav>
+        </div>
+        <div style="background:var(--ss-dark-card);border:1px solid var(--ss-dark-border);border-radius:12px;padding:14px;font-size:12px">
+          <div>PRO PLAN</div>
+          <strong style="display:block;margin-top:4px">32 / 300 checks</strong>
+        </div>
+      </aside>
+
+      <div>
+        <header class="ss-topbar">
+          <span style="font-size:13px;color:var(--ss-ink-muted)" data-ss-text="customer.breadcrumb"></span>
+          <span class="ss-pill" style="background:var(--ss-brand-soft);color:var(--ss-brand-primary)">Olivia Lee</span>
+        </header>
+
+        <main class="ss-main">
+          <h1 style="margin:0;font-size:26px" data-ss-text="customer.title"></h1>
+          <p style="color:var(--ss-ink-muted);margin:6px 0 24px" data-ss-text="customer.subtitle"></p>
+
+          <section class="ss-card" style="text-align:center;border-style:dashed;border-width:2px">
+            <strong data-ss-text="customer.dropTitle"></strong>
+            <div style="margin-top:14px">
+              <button type="button" class="ss-btn ss-btn-primary">Choose XLSX / CSV file</button>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="./text/surfaces.text.js"></script>
+    <script src="./ix/surfaces.ix.js"></script>
+  </body>
+</html>

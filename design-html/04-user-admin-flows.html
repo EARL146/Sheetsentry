@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SheetSentry — 04 System Flows & Architecture</title>
+    <link rel="stylesheet" href="./styles/tokens.css" />
+    <link rel="stylesheet" href="./styles/surfaces.css" />
+  </head>
+  <body>
+    <main class="ss-main" style="max-width:1240px;margin:0 auto">
+      <section class="ss-card" style="margin-bottom:24px">
+        <span class="ss-pill" style="background:var(--ss-brand-soft);color:var(--ss-brand-primary)" data-ss-text="flows.eyebrow"></span>
+        <h1 style="margin:12px 0 8px;font-size:32px" data-ss-text="flows.title"></h1>
+        <p style="margin:0;color:var(--ss-ink-muted)" data-ss-text="flows.subtitle"></p>
+      </section>
+
+      <div class="ss-grid-3">
+        <section class="ss-card">
+          <h3>01 Public Website</h3>
+          <p style="color:var(--ss-ink-muted);font-size:13px">Canonical token anchor (#2563EB, #10213B, #FFFFFF).</p>
+        </section>
+        <section class="ss-card">
+          <h3>02 Customer App</h3>
+          <p style="color:var(--ss-ink-muted);font-size:13px">Isolated preflight, mapping, rule builder, and exports.</p>
+        </section>
+        <section class="ss-card">
+          <h3>03 Admin Console</h3>
+          <p style="color:var(--ss-ink-muted);font-size:13px">Segregated USD/PHP ledgers, RBAC matrix &amp; audit gates.</p>
+        </section>
+      </div>
+    </main>
+
+    <script src="./text/surfaces.text.js"></script>
+    <script src="./ix/surfaces.ix.js"></script>
+  </body>
+</html>

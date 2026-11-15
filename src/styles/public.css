@@ -1,0 +1,489 @@
+/**
+ * 01 Public Website Surface Stylesheet
+ * Canonical visual source of truth for marketing hero, preview card,
+ * pricing cards, FAQ accordions, footer band, and auth views.
+ */
+
+.ss-surface-public {
+  isolation: isolate;
+  background-color: var(--ss-surface-white);
+  color: var(--ss-ink-primary);
+  font-family: var(--ss-font-sans);
+}
+
+.ss-public-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  height: 82px;
+  background-color: var(--ss-surface-white);
+  border-bottom: 1px solid var(--ss-border-default);
+}
+
+.ss-public-nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ss-ink-secondary);
+  transition: color 150ms ease;
+}
+
+.ss-public-nav-link:hover,
+.ss-public-nav-link[data-active='true'] {
+  color: var(--ss-brand-primary);
+  font-weight: 600;
+}
+
+.ss-public-hero {
+  background-color: var(--ss-surface-white);
+  border-bottom: 1px solid var(--ss-border-default);
+}
+
+.ss-public-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  height: 30px;
+  padding: 0 16px;
+  border-radius: 15px;
+  background-color: var(--ss-brand-soft);
+  color: var(--ss-brand-primary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.ss-public-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--ss-surface-white);
+  border: 1px solid var(--ss-border-default);
+  border-radius: var(--ss-radius-xl);
+  box-shadow: var(--ss-shadow-xs);
+}
+
+.ss-public-preview-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--ss-surface-white);
+  border: 1px solid var(--ss-border-default);
+  border-radius: var(--ss-radius-2xl);
+  box-shadow: var(--ss-shadow-xl);
+  overflow: hidden;
+}
+
+.ss-public-cta-band {
+  background-color: var(--ss-surface-chrome-public);
+  color: var(--ss-ink-on-dark);
+  border-radius: var(--ss-radius-xl);
+}
+
+.ss-public-footer {
+  background-color: var(--ss-surface-chrome-public);
+  color: var(--ss-ink-on-dark);
+  border-top: 1px solid #1b2d4b;
+}
+
+.ss-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: var(--ss-radius-md);
+  background-color: var(--ss-brand-primary);
+  color: var(--ss-ink-on-dark);
+  font-size: 13px;
+  font-weight: 600;
+  box-shadow: var(--ss-shadow-xs);
+  transition: background-color 150ms ease, transform 120ms ease;
+}
+
+.ss-btn-primary:hover {
+  background-color: var(--ss-brand-primary-hover);
+}
+
+.ss-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: var(--ss-radius-md);
+  background-color: var(--ss-surface-white);
+  border: 1px solid var(--ss-border-default);
+  color: var(--ss-ink-primary);
+  font-size: 13px;
+  font-weight: 600;
+  transition: border-color 150ms ease, color 150ms ease;
+}
+
+.ss-btn-secondary:hover {
+  border-color: var(--ss-brand-primary);
+  color: var(--ss-brand-primary);
+}
+
+/* ==========================================================================
+   Hero 3D Continuous Spatial Validation Stage (01 Public Website)
+   ========================================================================== */
+
+.ss-hero-stage-shell {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
+.ss-hero-ambient-backdrop {
+  position: absolute;
+  inset: 4% 2% 6% 2%;
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at 20% 22%, rgba(37, 99, 235, 0.14), transparent 54%),
+    radial-gradient(circle at 82% 78%, rgba(22, 163, 106, 0.09), transparent 50%),
+    linear-gradient(135deg, rgba(234, 242, 255, 0.78) 0%, rgba(248, 250, 252, 0.94) 100%);
+  border: 1px solid rgba(191, 219, 254, 0.6);
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+  animation: ssHeroBackdropPulse 9s ease-in-out infinite;
+}
+
+.ss-hero-ambient-grid {
+  position: absolute;
+  inset: -28px;
+  background-image:
+    linear-gradient(to right, rgba(37, 99, 235, 0.065) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.065) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: radial-gradient(circle at 50% 50%, black 38%, transparent 86%);
+  animation: ssHeroGridDrift 10s linear infinite;
+}
+
+/* Tilted 3D Orbital Halo Ring behind the Workbook Stack */
+.ss-hero-orbit-stage {
+  position: absolute;
+  inset: 0;
+  perspective: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.ss-hero-orbit-ring {
+  width: 96%;
+  aspect-ratio: 1 / 1;
+  max-width: 500px;
+  border-radius: 9999px;
+  border: 1.5px solid rgba(37, 99, 235, 0.24);
+  box-shadow:
+    inset 0 0 36px rgba(37, 99, 235, 0.08),
+    0 0 24px rgba(59, 130, 246, 0.08);
+  transform-style: preserve-3d;
+  animation: ssHeroOrbitSpin 14s linear infinite;
+}
+
+.ss-hero-orbit-dot {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 9999px;
+}
+
+.ss-hero-orbit-dot--blue {
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #60a5fa 0%, #2563eb 100%);
+  box-shadow: 0 0 14px rgba(37, 99, 235, 0.65);
+}
+
+.ss-hero-orbit-dot--green {
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, #4ade80 0%, #16a36a 100%);
+  box-shadow: 0 0 14px rgba(22, 163, 106, 0.55);
+}
+
+.ss-hero-3d-viewport {
+  position: relative;
+  z-index: 1;
+  perspective: 960px;
+  perspective-origin: 50% 45%;
+  padding: 16px 14px 20px 14px;
+}
+
+@media (min-width: 640px) {
+  .ss-hero-3d-viewport {
+    padding: 18px 22px 24px 22px;
+  }
+}
+
+.ss-hero-pointer-rig {
+  transform-style: preserve-3d;
+  transition: transform 340ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+.ss-hero-3d-assembly {
+  position: relative;
+  transform-style: preserve-3d;
+  will-change: transform;
+  animation: ssHeroAmbientOrbit 9.5s ease-in-out infinite;
+}
+
+.ss-hero-sheet-slab {
+  position: absolute;
+  inset: 0;
+  border-radius: 22px;
+  border: 1px solid #d5e1f0;
+  backface-visibility: hidden;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.ss-hero-sheet-slab::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(37, 99, 235, 0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(37, 99, 235, 0.05) 1px, transparent 1px);
+  background-size: 48px 28px;
+}
+
+.ss-hero-sheet-slab--back {
+  background: linear-gradient(160deg, #eff4fc 0%, #e1ebfa 100%);
+  box-shadow: 0 22px 42px rgba(16, 33, 59, 0.11);
+  animation: ssHeroSlabBackFloat 7.8s ease-in-out infinite;
+}
+
+.ss-hero-sheet-slab--mid {
+  background: linear-gradient(160deg, #f6f9ff 0%, #eaf1fd 100%);
+  box-shadow: 0 18px 34px rgba(16, 33, 59, 0.1);
+  animation: ssHeroSlabMidFloat 6.4s ease-in-out infinite;
+}
+
+.ss-hero-main-plate {
+  position: relative;
+  transform-style: preserve-3d;
+  background-color: #ffffff;
+  border: 1px solid #d8e2f0;
+  border-radius: 22px;
+  box-shadow:
+    0 28px 54px -14px rgba(16, 33, 59, 0.18),
+    0 8px 22px rgba(37, 99, 235, 0.1),
+    0 2px 0 #d0dceb;
+  overflow: hidden;
+  animation: ssHeroMainFloat 7.2s ease-in-out infinite;
+}
+
+.ss-hero-glare {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.52;
+}
+
+.ss-hero-auto-sheen {
+  position: absolute;
+  top: -30%;
+  left: -70%;
+  width: 55%;
+  height: 160%;
+  background: linear-gradient(
+    110deg,
+    transparent 20%,
+    rgba(255, 255, 255, 0.55) 48%,
+    rgba(219, 234, 254, 0.32) 56%,
+    transparent 80%
+  );
+  transform: skewX(-18deg);
+  pointer-events: none;
+  z-index: 3;
+  animation: ssHeroAutoSheen 6.8s ease-in-out infinite;
+}
+
+.ss-hero-scan-beam {
+  position: absolute;
+  left: -4px;
+  right: -4px;
+  height: 28px;
+  background: linear-gradient(
+    180deg,
+    rgba(37, 99, 235, 0) 0%,
+    rgba(37, 99, 235, 0.1) 82%,
+    rgba(59, 130, 246, 0.25) 95%,
+    transparent 100%
+  );
+  border-bottom: 1.5px solid rgba(59, 130, 246, 0.85);
+  box-shadow: 0 3px 12px rgba(37, 99, 235, 0.28);
+  border-radius: 6px;
+  z-index: 4;
+  pointer-events: none;
+  animation: ssHeroScan 3.4s ease-in-out infinite;
+}
+
+.ss-hero-row-pulse {
+  animation: ssRowPulse 4s ease-in-out infinite;
+}
+
+.ss-hero-satellite-top {
+  position: relative;
+  z-index: 5;
+  transform-style: preserve-3d;
+  animation: ssHeroSatelliteTopFloat 5.6s ease-in-out infinite;
+}
+
+.ss-hero-satellite-bot {
+  position: relative;
+  z-index: 5;
+  transform-style: preserve-3d;
+  animation: ssHeroSatelliteBotFloat 6.2s ease-in-out infinite;
+}
+
+.ss-hero-float-prism {
+  position: relative;
+  z-index: 5;
+  transform-style: preserve-3d;
+  animation: ssHeroPrismFloat 5.2s ease-in-out infinite;
+}
+
+/* Authentic 3D Rotating Isometric Shield Cube */
+.ss-cube-scene {
+  width: 38px;
+  height: 38px;
+  perspective: 240px;
+  flex-shrink: 0;
+}
+
+.ss-cube-rotor {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: ssCubeOrbit 8s linear infinite;
+}
+
+.ss-cube-face {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--ss-font-mono);
+  font-size: 9.5px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.34);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.28);
+  backface-visibility: visible;
+}
+
+.ss-cube-face--front  { background: linear-gradient(135deg, #2563eb, #1d4ed8); transform: rotateY(0deg) translateZ(19px); }
+.ss-cube-face--right  { background: linear-gradient(135deg, #1d4ed8, #1e40af); transform: rotateY(90deg) translateZ(19px); }
+.ss-cube-face--back   { background: linear-gradient(135deg, #10213b, #1b2d4b); transform: rotateY(180deg) translateZ(19px); }
+.ss-cube-face--left   { background: linear-gradient(135deg, #16a36a, #15803d); transform: rotateY(-90deg) translateZ(19px); }
+.ss-cube-face--top    { background: linear-gradient(135deg, #60a5fa, #3b82f6); transform: rotateX(90deg) translateZ(19px); }
+.ss-cube-face--bottom { background: linear-gradient(135deg, #0d1b31, #10213b); transform: rotateX(-90deg) translateZ(19px); }
+
+@keyframes ssHeroAmbientOrbit {
+  0%   { transform: translate3d(0, 0px, 0px) rotateX(9deg) rotateY(-14deg) rotateZ(-0.9deg); }
+  25%  { transform: translate3d(0, -7px, 10px) rotateX(13deg) rotateY(-7deg) rotateZ(0.2deg); }
+  50%  { transform: translate3d(0, -3px, 14px) rotateX(7deg) rotateY(-5deg) rotateZ(0.8deg); }
+  75%  { transform: translate3d(0, -9px, 8px) rotateX(11deg) rotateY(-12deg) rotateZ(-0.4deg); }
+  100% { transform: translate3d(0, 0px, 0px) rotateX(9deg) rotateY(-14deg) rotateZ(-0.9deg); }
+}
+
+@keyframes ssHeroSlabBackFloat {
+  0%, 100% { transform: translate3d(-16px, 16px, -44px) rotateZ(-1deg); }
+  50%      { transform: translate3d(-26px, 26px, -78px) rotateZ(-2.2deg); }
+}
+
+@keyframes ssHeroSlabMidFloat {
+  0%, 100% { transform: translate3d(-8px, 8px, -20px) rotateZ(-0.4deg); }
+  50%      { transform: translate3d(-14px, 14px, -40px) rotateZ(-1.1deg); }
+}
+
+@keyframes ssHeroMainFloat {
+  0%, 100% { transform: translate3d(0, 0px, 18px); }
+  50%      { transform: translate3d(0, -4px, 28px); }
+}
+
+@keyframes ssHeroSatelliteTopFloat {
+  0%, 100% { transform: translate3d(0, 0px, 60px) rotateY(-2deg); }
+  50%      { transform: translate3d(5px, -10px, 86px) rotateY(4deg); }
+}
+
+@keyframes ssHeroSatelliteBotFloat {
+  0%, 100% { transform: translate3d(0, 0px, 52px) rotateY(2deg); }
+  50%      { transform: translate3d(-5px, -9px, 76px) rotateY(-4deg); }
+}
+
+@keyframes ssHeroPrismFloat {
+  0%, 100% { transform: translate3d(0, 2px, 52px) rotateX(8deg) rotateY(-10deg); }
+  50%      { transform: translate3d(-4px, -8px, 74px) rotateX(-4deg) rotateY(8deg); }
+}
+
+@keyframes ssHeroOrbitSpin {
+  0%   { transform: rotateX(68deg) rotateY(-14deg) rotateZ(0deg); }
+  100% { transform: rotateX(68deg) rotateY(-14deg) rotateZ(360deg); }
+}
+
+@keyframes ssHeroGridDrift {
+  0%   { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(28px, 28px, 0); }
+}
+
+@keyframes ssHeroBackdropPulse {
+  0%, 100% { opacity: 0.92; }
+  50%      { opacity: 1; }
+}
+
+@keyframes ssHeroAutoSheen {
+  0%, 62% { left: -75%; opacity: 0; }
+  74%     { opacity: 0.85; }
+  94%, 100% { left: 135%; opacity: 0; }
+}
+
+@keyframes ssHeroScan {
+  0%   { top: -6px; opacity: 0; }
+  12%  { opacity: 0.95; }
+  85%  { opacity: 0.95; }
+  100% { top: calc(100% - 22px); opacity: 0; }
+}
+
+@keyframes ssRowPulse {
+  0%, 100% { border-color: transparent; background-color: transparent; }
+  50%      { border-color: rgba(37, 99, 235, 0.24); background-color: rgba(234, 242, 255, 0.55); }
+}
+
+@keyframes ssCubeOrbit {
+  0%   { transform: rotateX(-20deg) rotateY(0deg) rotateZ(0deg); }
+  50%  { transform: rotateX(-30deg) rotateY(180deg) rotateZ(8deg); }
+  100% { transform: rotateX(-20deg) rotateY(360deg) rotateZ(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-hero-ambient-backdrop,
+  .ss-hero-ambient-grid,
+  .ss-hero-orbit-ring,
+  .ss-hero-3d-assembly,
+  .ss-hero-sheet-slab--back,
+  .ss-hero-sheet-slab--mid,
+  .ss-hero-main-plate,
+  .ss-hero-auto-sheen,
+  .ss-hero-scan-beam,
+  .ss-hero-row-pulse,
+  .ss-hero-satellite-top,
+  .ss-hero-satellite-bot,
+  .ss-hero-float-prism,
+  .ss-cube-rotor {
+    animation: none;
+  }
+}

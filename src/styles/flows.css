@@ -1,0 +1,36 @@
+/**
+ * 00 Foundations & 04 User/Admin Flows Surface Stylesheet
+ * Unclipped typography cards, semantic token grids, connected system maps,
+ * relational ERD domain cards, and API catalog pills.
+ */
+
+.ss-surface-flows {
+  isolation: isolate;
+  background-color: var(--ss-surface-canvas);
+  color: var(--ss-ink-primary);
+  font-family: var(--ss-font-sans);
+}
+
+.ss-flows-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--ss-surface-white);
+  border: 1px solid var(--ss-border-default);
+  border-radius: var(--ss-radius-lg);
+  box-shadow: var(--ss-shadow-xs);
+  overflow: visible;
+}
+
+.ss-flows-type-row {
+  border-bottom: 1px solid var(--ss-border-subtle);
+  padding-bottom: 14px;
+  overflow: visible;
+  word-break: break-word;
+}
+
+.ss-flows-dark-panel {
+  background-color: #0d1726;
+  color: var(--ss-ink-on-dark);
+  border: 1px solid #1e2d45;
+  border-radius: var(--ss-radius-xl);
+}

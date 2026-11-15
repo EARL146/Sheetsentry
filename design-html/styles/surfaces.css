@@ -1,0 +1,147 @@
+/**
+ * Separated Surface UI Stylesheets (HTML/CSS Blueprints)
+ * Guarantees opaque card isolation so dark/background layers never bleed behind text.
+ */
+
+.ss-card {
+  position: relative;
+  z-index: 1;
+  background-color: var(--ss-white);
+  border: 1px solid var(--ss-border);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 6px rgba(16, 33, 59, 0.05);
+}
+
+.ss-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 44px;
+  padding: 0 22px;
+  border-radius: 11px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+}
+
+.ss-btn-primary {
+  background-color: var(--ss-brand-primary);
+  color: var(--ss-white);
+}
+
+.ss-btn-secondary {
+  background-color: var(--ss-white);
+  color: var(--ss-ink);
+  border: 1px solid var(--ss-border);
+}
+
+.ss-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.ss-pill-success {
+  background-color: var(--ss-success-bg);
+  color: var(--ss-success);
+}
+
+.ss-pill-warn {
+  background-color: var(--ss-warning-bg);
+  color: var(--ss-warning);
+}
+
+.ss-shell {
+  display: grid;
+  grid-template-columns: 238px 1fr;
+  min-height: 100vh;
+}
+
+.ss-rail {
+  padding: 24px 14px;
+  color: var(--ss-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ss-rail--customer {
+  background-color: var(--ss-dark-customer);
+}
+
+.ss-rail--admin {
+  background-color: var(--ss-dark-admin);
+}
+
+.ss-topbar {
+  height: 74px;
+  background-color: var(--ss-white);
+  border-bottom: 1px solid var(--ss-border);
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ss-main {
+  padding: 32px;
+  background-color: var(--ss-canvas);
+}
+
+.ss-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.ss-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.ss-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.ss-hero-3d-preview {
+  perspective: 1200px;
+}
+
+.ss-hero-3d-card {
+  transform-style: preserve-3d;
+  box-shadow:
+    -12px 14px 0 -2px #edf2fb,
+    -22px 24px 0 -4px #e2eaf8,
+    0 26px 52px rgba(16, 33, 59, 0.16);
+  animation: ssSurfaceCardOrbit 8.5s ease-in-out infinite;
+}
+
+@keyframes ssSurfaceCardOrbit {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) rotateX(6deg) rotateY(-10deg) rotateZ(-0.5deg);
+  }
+  50% {
+    transform: translate3d(0, -8px, 14px) rotateX(3deg) rotateY(4deg) rotateZ(0.6deg);
+  }
+}
+
+@media (max-width: 960px) {
+  .ss-shell {
+    grid-template-columns: 1fr;
+  }
+  .ss-grid-2,
+  .ss-grid-3,
+  .ss-grid-4 {
+    grid-template-columns: 1fr;
+  }
+}

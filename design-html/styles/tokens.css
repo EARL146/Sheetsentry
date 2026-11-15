@@ -1,0 +1,49 @@
+/**
+ * Standalone Pure CSS Design System Tokens
+ * Derived from: 01 Public Website
+ * Shared cleanly across Public Website, Customer App, Admin Console, and System Flows.
+ */
+
+:root {
+  --ss-brand-primary: #2563eb;
+  --ss-brand-primary-hover: #1d4ed8;
+  --ss-brand-soft: #eaf2ff;
+  --ss-brand-border: #bfdbfe;
+
+  --ss-ink: #10213b;
+  --ss-ink-muted: #667085;
+  --ss-white: #ffffff;
+  --ss-canvas: #f5f7fb;
+  --ss-subtle: #fafbfd;
+  --ss-border: #e4e9f1;
+
+  --ss-dark-public: #0d1b31;
+  --ss-dark-customer: #111f37;
+  --ss-dark-admin: #101c32;
+  --ss-dark-card: #1b2d4b;
+  --ss-dark-border: #273e63;
+
+  --ss-success: #16a36a;
+  --ss-success-bg: #e8f7ef;
+  --ss-warning: #d99121;
+  --ss-warning-bg: #fff4de;
+  --ss-danger: #d84a4a;
+  --ss-danger-bg: #fdecec;
+
+  --ss-font-sans: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --ss-font-mono: 'JetBrains Mono', ui-monospace, monospace;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--ss-font-sans);
+  background-color: var(--ss-canvas);
+  color: var(--ss-ink);
+  -webkit-font-smoothing: antialiased;
+}

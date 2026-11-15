@@ -1,0 +1,71 @@
+/**
+ * SheetSentry Canonical Design System CSS Tokens
+ * Derived strictly from: Public Website (01 Public Website)
+ *
+ * Surface Isolation Guarantee:
+ * - Light canvas (#F5F7FB) and crisp white card containers (#FFFFFF) never sit
+ *   transparently above dark layers.
+ * - Typography, radii, borders, and semantic status colors cascade uniformly
+ *   into Public Website, Customer App, Admin Console, and Flows surfaces.
+ */
+
+:root {
+  /* Brand Anchors (Public Website Identity) */
+  --ss-brand-primary: #2563eb;
+  --ss-brand-primary-hover: #1d4ed8;
+  --ss-brand-soft: #eaf2ff;
+  --ss-brand-border: #bfdbfe;
+  --ss-brand-pro-tint: #f3f7ff;
+
+  /* Typography & Ink */
+  --ss-ink-primary: #10213b;
+  --ss-ink-secondary: #667085;
+  --ss-ink-muted: #94a3b8;
+  --ss-ink-on-dark: #ffffff;
+  --ss-ink-on-dark-muted: #aebbd0;
+
+  /* Neutral Surfaces */
+  --ss-surface-white: #ffffff;
+  --ss-surface-canvas: #f5f7fb;
+  --ss-surface-subtle: #fafbfd;
+  --ss-surface-chrome-public: #0d1b31;
+  --ss-surface-chrome-customer: #111f37;
+  --ss-surface-chrome-admin: #101c32;
+  --ss-surface-chrome-card: #1b2d4b;
+  --ss-surface-chrome-hover: #233e65;
+  --ss-border-default: #e4e9f1;
+  --ss-border-subtle: #edf2f7;
+  --ss-border-chrome: #273e63;
+
+  /* Semantic Status Colors */
+  --ss-status-success: #16a36a;
+  --ss-status-success-bg: #e8f7ef;
+  --ss-status-success-border: #b8e6cd;
+
+  --ss-status-warning: #d99121;
+  --ss-status-warning-bg: #fff4de;
+  --ss-status-warning-border: #fde68a;
+
+  --ss-status-danger: #d84a4a;
+  --ss-status-danger-bg: #fdecec;
+  --ss-status-danger-border: #fecaca;
+
+  /* Font Families */
+  --ss-font-sans: 'DM Sans', 'Inter', system-ui, -apple-system, sans-serif;
+  --ss-font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Radii */
+  --ss-radius-xs: 6px;
+  --ss-radius-sm: 8px;
+  --ss-radius-md: 10px;
+  --ss-radius-lg: 14px;
+  --ss-radius-xl: 18px;
+  --ss-radius-2xl: 22px;
+  --ss-radius-pill: 9999px;
+
+  /* Elevations */
+  --ss-shadow-xs: 0 1px 2px rgba(16, 33, 59, 0.04);
+  --ss-shadow-sm: 0 2px 6px rgba(16, 33, 59, 0.06);
+  --ss-shadow-md: 0 6px 16px rgba(16, 33, 59, 0.08);
+  --ss-shadow-xl: 0 18px 38px rgba(16, 33, 59, 0.1);
+}
